@@ -1,4 +1,4 @@
-# Alexa Skill Management Dashboard
+# Alexa Skill Test Server & Dashboard
 
 A powerful, centralized dashboard to manage, deploy, and monitor multiple Alexa Skills running on a local server. This tool automates the process of cloning repositories, managing environment variables, editing interaction models, and exposing local services via Cloudflare tunnels.
 
@@ -31,7 +31,7 @@ A powerful, centralized dashboard to manage, deploy, and monitor multiple Alexa 
    # Root directory (backend)
    npm install
 
-   # Client directory (frontend), only if you want to run the frontend locally
+   # Client directory (frontend)
    cd client
    npm install
    ```
@@ -45,7 +45,7 @@ A powerful, centralized dashboard to manage, deploy, and monitor multiple Alexa 
    ```
    *Defaults to port 5001. You can change this via the `PORT` environment variable.*
 
-2. **Start the Frontend (Development)**, only if you want to run the frontend locally:
+2. **Start the Frontend (Development)**:
    From the `client` directory:
    ```bash
    npm run dev

@@ -94,7 +94,14 @@ app.post('/api/clone', (req, res) => {
 
 app.get('/api/env/:skillId', (req, res) => {
   const { skillId } = req.params;
-  const envPath = path.join(SKILLS_BASE_DIR, skillId, '.env');
+  const skillDir = path.join(SKILLS_BASE_DIR, skillId);
+  const envPath = path.join(skillDir, '.env');
+  const envExamplePath = path.join(skillDir, '.env.example');
+
+  if (!fs.existsSync(envPath) && fs.existsSync(envExamplePath)) {
+    fs.copyFileSync(envExamplePath, envPath);
+  }
+
   if (fs.existsSync(envPath)) {
     res.json({ content: fs.readFileSync(envPath, 'utf8') });
   } else {
